@@ -1,47 +1,18 @@
-let images = [
-    { src: 'images/bild1.jpg', caption: 'Bild 1' },
-    { src: 'images/bild2.jpg', caption: 'Bild 2' }
-];
-let currentIndex = 0;
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.gallery-item');
+const totalImages = images.length;
 
-// Zeigt das Bild und die Caption an
-function showImage(index) {
-    const imageElement = document.getElementById('galleryImage');
-    const captionElement = document.getElementById('galleryCaption');
-    imageElement.src = images[index].src;
-    captionElement.textContent = images[index].caption;
+function updateGallery() {
+    const offset = -currentImageIndex * 100;
+    document.querySelector('.gallery').style.transform = `translateX(${offset}%)`;
 }
 
-// Vorheriges Bild
-function prevImage() {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-    showImage(currentIndex);
-}
-
-// Nächstes Bild
 function nextImage() {
-    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-    showImage(currentIndex);
+    currentImageIndex = (currentImageIndex + 1) % totalImages;
+    updateGallery();
 }
 
-// Beim Laden der Seite das erste Bild anzeigen
-document.addEventListener('DOMContentLoaded', () => {
-    showImage(currentIndex);
-});
-
-// Lightbox öffnen
-function openLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-
-    lightbox.style.display = 'flex';
-    lightboxImage.src = images[currentIndex].src;
-    lightboxCaption.textContent = images[currentIndex].caption;
-}
-
-// Lightbox schließen
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none';
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+    updateGallery();
 }
