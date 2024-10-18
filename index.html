@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hauptseite</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fotogalerie</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar / Menüleiste -->
-        <nav class="sidebar">
-            <ul>
-                <li><a href="index.html">Hauptseite</a></li>
-                <li><a href="gallery.html">Galerie</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
-
-        <!-- Hauptinhalt -->
-        <div class="content">
-            <section id="home">
-                <h1>Willkommen auf der Hauptseite</h1>
-                <p>Dies ist eine einfache Textbox:</p>
-                <textarea rows="4" cols="50" placeholder="Gib hier deinen Text ein..."></textarea>
-            </section>
+    <header>
+        <h1>Meine Fotogalerie</h1>
+    </header>
+    <div class="gallery-container">
+        <button class="scroll-button left" onclick="scrollLeft()">&#10094;</button>
+        <div class="gallery">
+            <div class="photo-container" id="photoContainer">
+                <img src="images/_DSC0219.jpg" alt="Reiten 1">
+                <img src="images/_DSC0246.jpg" alt="Reite 2">
+                <img src="images/_DSC0261.jpg" alt="Reiten 3">
+                <img src="images/_DSC0262.jpg" alt="Reiten 4">
+                <img src="images/_DSC0276-Verbessert-RR.jpg" alt="Reiten 5">
+                <img src="images/_DSC6471.jpg" alt="Reiten 6">
+                <img src="images/_DSC7930-Verbessert-RR.jpg" alt="Reiten 7">
+                <img src="images/_DSC0526-Verbessert-RR.jpg" alt="Drift 1">
+                <img src="images/_DSC0665.jpg" alt="Drift 2">
+                <img src="images/_DSC0883-Pano.jpg" alt="Drift 3">
+                <img src="images/_DSC9102.jpg" alt="Auto 1">
+                <img src="images/_DSC9114.jpg" alt="Auto 2">
+                <img src="images/_DSC9006.jpg" alt="Auto 3">
+                <img src="images/_DSC7648-Enhanced-NR.jpg" alt="Industrie 1">
+                <img src="images/_DSC7659-Enhanced-NR.jpg" alt="Industrie 2">
+                <img src="images/_DSC7843-Verbessert-RR.jpg" alt="Industrie 3">
+                <img src="images/_DSC8616-Verbessert-RR.jpg" alt="Industrie 4">
+                <img src="images/_DSC8643-Pano.jpg" alt="Industrie 5">
+                <img src="images/_DSC8658-Verbessert-RR.jpg" alt="Industrie 6">
+            </div>
         </div>
+        <button class="scroll-button right" onclick="scrollRight()">&#10095;</button>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
