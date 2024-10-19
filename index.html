@@ -1,7 +1,63 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    </body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meine Bildergalerie</title>
+</head>
+<body>
+    <header>
+        <h1>Meine Bildergalerie</h1>
+    </header>
+    <main>
+        <div class="grid">
+            <!-- Panorama-Bilder -->
+            <div class="grid-item panorama"><img src="images/Auto-4.jpg" alt="Panorama 1" onclick="openModal(this.src)"></div>
+            <div class="grid-item panorama"><img src="images/Industrie-2.jpg" alt="Panorama 2" onclick="openModal(this.src)"></div>
+            
+            <!-- Portrait mit zwei normalen Bildern darunter -->
+            <div class="portrait-group">
+                <div class="grid-item portrait"><img src="images/Reiten-1.jpg" alt="Portrait 1" onclick="openModal(this.src)"></div>
+                <div class="grid-item normal-pair">
+                    <img src="images/Auto-1.jpg" alt="Bild 1" onclick="openModal(this.src)">
+                    <img src="images/Auto-2.jpg" alt="Bild 2" onclick="openModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Normale Bilder -->
+            <div class="grid-item"><img src="images/Auto-3.jpg" alt="Bild 3" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Industrie-1.jpg" alt="Bild 4" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Industrie-3.jpg" alt="Bild 5" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Industrie-4.jpg" alt="Bild 6" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Industrie-5.jpg" alt="Bild 7" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Reiten-2.jpg" alt="Bild 8" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Reiten-3.jpg" alt="Bild 9" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Reiten-4.jpg" alt="Bild 10" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Reiten-5.jpg" alt="Bild 11" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Reiten-6.jpg" alt="Bild 12" onclick="openModal(this.src)"></div>
+            <div class="grid-item"><img src="images/Reiten-7.jpg" alt="Bild 13" onclick="openModal(this.src)"></div>
+        </div>
+    </main>
+
+    <!-- Modal für vergrößerte Bilder -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
 </html>
